@@ -1,0 +1,728 @@
+<!-- 320ef1a60ba6909f -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Cão Carinho Pet Shop | Rio Verde - GO · Elevateman</title>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --brand: #2E7D5E;
+            --brand-dark: #1B5E40;
+            --brand-light: #E8F5EE;
+            --accent: #F5A623;
+            --accent-light: #FFF4E0;
+            --text: #2C2C2C;
+            --text-light: #5A5A5A;
+            --bg: #FAFCFA;
+            --white: #FFFFFF;
+            --footer-bg: #1A3A2A;
+            --footer-text: #C8DDD0;
+            --border: #D4E4DA;
+            --radius: 10px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── NAV ── */
+        .kvk2_nav {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .kvk2_nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .kvk2_nav-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .kvk2_nav-logo .kvk2_paw { font-size: 1.5rem; }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.92rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--brand); }
+
+        .kvk2_nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+        /* ── HERO ── */
+        .kvk2_hero {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: var(--white);
+            padding: 80px 24px;
+            text-align: center;
+        }
+        .kvk2_hero-inner { max-width: 750px; margin: 0 auto; }
+        .kvk2_hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .kvk2_hero p {
+            font-size: 1.1rem;
+            opacity: 0.92;
+            margin-bottom: 28px;
+            line-height: 1.7;
+        }
+        .kvk2_hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* ── SECTIONS ── */
+        .kvk2_section {
+            padding: 72px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .kvk2_section-alt { background: var(--white); }
+        .kvk2_section-alt .kvk2_section { padding: 72px 24px; }
+
+        .kvk2_section-title {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 12px;
+        }
+        .kvk2_section-sub {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* ── SOBRE ── */
+        .kvk2_about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .kvk2_about-text p { margin-bottom: 16px; color: var(--text-light); }
+        .kvk2_about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .kvk2_highlight-card {
+            background: var(--brand-light);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+        }
+        .kvk2_highlight-card .kvk2_number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--brand);
+        }
+        .kvk2_highlight-card .kvk2_label {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ── SERVIÇOS ── */
+        .kvk2_services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .kvk2_service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .kvk2_service-card:hover {
+            border-color: var(--brand);
+            box-shadow: 0 4px 20px rgba(46,125,94,0.08);
+        }
+        .kvk2_service-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--brand-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+        }
+        .kvk2_service-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+        .kvk2_service-card p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ── DEPOIMENTOS ── */
+        .kvk2_testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .kvk2_testimonial-card {
+            background: var(--brand-light);
+            border-radius: var(--radius);
+            padding: 28px;
+        }
+        .kvk2_testimonial-stars { color: var(--accent); font-size: 0.95rem; margin-bottom: 12px; }
+        .kvk2_testimonial-card p {
+            font-size: 0.92rem;
+            color: var(--text);
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .kvk2_testimonial-author {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--brand-dark);
+        }
+
+        /* ── CONTATO ── */
+        .kvk2_contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .kvk2_contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .kvk2_contact-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--brand-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .kvk2_contact-info-item .kvk2_label {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .kvk2_contact-info-item .kvk2_value {
+            font-size: 0.95rem;
+            color: var(--text);
+            font-weight: 500;
+            margin-top: 2px;
+        }
+        .kvk2_contact-form { display: flex; flex-direction: column; gap: 16px; }
+        .kvk2_contact-form input,
+        .kvk2_contact-form textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.92rem;
+            font-family: inherit;
+            background: var(--white);
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+        .kvk2_contact-form input:focus,
+        .kvk2_contact-form textarea:focus {
+            outline: none;
+            border-color: var(--brand);
+        }
+        .kvk2_contact-form textarea { resize: vertical; min-height: 110px; }
+        .kvk2_btn-submit {
+            background: var(--brand);
+            color: var(--white);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            align-self: flex-start;
+        }
+        .kvk2_btn-submit:hover { background: var(--brand-dark); }
+
+        /* ── HORÁRIOS ── */
+        .kvk2_hours-bar {
+            background: var(--accent-light);
+            border: 1px solid rgba(245,166,35,0.2);
+            border-radius: var(--radius);
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .kvk2_hours-bar span { font-size: 0.9rem; color: var(--text); }
+        .kvk2_hours-bar strong { color: var(--brand-dark); }
+
+        /* ── FOOTER ── */
+        .kvk2_footer {
+            background: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 48px 24px 24px;
+        }
+        .kvk2_footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .kvk2_footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .kvk2_footer-brand {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .kvk2_footer-desc {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+        .kvk2_footer h4 {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white);
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        .kvk2_footer-links { list-style: none; }
+        .kvk2_footer-links li { margin-bottom: 10px; }
+        .kvk2_footer-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s;
+        }
+        .kvk2_footer-links a:hover { color: var(--white); }
+
+        .kvk2_footer-legal {
+            font-size: 0.78rem;
+            opacity: 0.7;
+            line-height: 1.8;
+            text-align: center;
+        }
+        .kvk2_footer-legal strong { color: var(--white); font-weight: 600; opacity: 1; }
+
+        /* ── MODAIS (Política / Termos) ── */
+        .kvk2_modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 999;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+        .kvk2_modal-overlay:target { display: flex; }
+        .kvk2_modal-box {
+            background: var(--white);
+            border-radius: 12px;
+            max-width: 720px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 40px;
+        }
+        .kvk2_modal-box h2 { font-size: 1.4rem; color: var(--brand-dark); margin-bottom: 20px; }
+        .kvk2_modal-box p, .kvk2_modal-box li { font-size: 0.9rem; color: var(--text-light); line-height: 1.8; margin-bottom: 12px; }
+        .kvk2_modal-box ul { padding-left: 20px; }
+        .kvk2_modal-close {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--brand);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .kvk2_nav-toggle { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 20px 24px;
+                border-bottom: 1px solid var(--border);
+                gap: 16px;
+            }
+            .kvk2_hero { padding: 56px 24px; }
+            .kvk2_hero h1 { font-size: 1.7rem; }
+            .kvk2_about-grid,
+            .kvk2_contact-grid { grid-template-columns: 1fr; }
+            .kvk2_services-grid,
+            .kvk2_testimonials-grid { grid-template-columns: 1fr; }
+            .kvk2_footer-top { grid-template-columns: 1fr; gap: 28px; }
+            .kvk2_hours-bar { flex-direction: column; gap: 12px; text-align: center; }
+        }
+    </style>
+
+<link rel="canonical" href="https://elevateman.online/">
+<meta name="description" content="Descubra informações exclusivas e conteúdo verificado em elevateman.online. Acesse agora e confira os detalhes completos.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elevateman.online/">
+<meta property="og:site_name" content="elevateman.online">
+<meta property="og:description" content="Descubra informações exclusivas e conteúdo verificado em elevateman.online. Acesse agora e confira os detalhes completos.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="elevateman.online">
+<meta name="generator" content="cms-5654dba0e3a1">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Elevateman","url":"https://elevateman.online/","datePublished":"2025-09-07","dateModified":"2026-03-26","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Elevateman","url":"https://elevateman.online/"},"publisher":{"@type":"Organization","name":"Elevateman","url":"https://elevateman.online/"}}</script>
+
+<style>:root{--jmog-p:rgb(53,226,168);--jmog-s:rgb(226,141,252);--jmog-id:'e6315e324616'}@keyframes dodxqlki{from{opacity:1}to{opacity:1}}.kuoitm{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}</style>
+<!-- b:z7e6shmdnd v3.37.902 -->
+</head>
+<body data-s="3b5e8ea4" data-p="dq1c63">
+<noscript><div style="padding:16px;text-align:center;font-size:13px;"><p>Ative o JavaScript para acessar todo o conteúdo de elevateman.</p></div></noscript>
+
+<!-- NAV -->
+<nav class="kvk2_nav">
+    <div class="kvk2_nav-inner">
+        <a href="#" class="kvk2_nav-logo"><span class="kvk2_paw">🐾</span> Cão Carinho Pet Shop</a>
+        <button class="kvk2_nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="kvk2_hero">
+    <div class="kvk2_hero-inner">
+        <h1>Cuidado completo para o seu melhor amigo</h1>
+        <p>Desde 2015 oferecemos produtos, serviços de higiene e embelezamento e tudo o que seu pet precisa para viver feliz e saudável. Venha nos visitar em Rio Verde, GO.</p>
+        <span class="kvk2_hero-badge">📍 Rua 19, 695 — Bairro Popular, Rio Verde - GO</span>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section class="kvk2_section" id="sobre">
+    <h2 class="kvk2_section-title">Sobre Nós</h2>
+    <p class="kvk2_section-sub">Há mais de 10 anos cuidando de quem faz parte da sua família.</p>
+    <div class="kvk2_about-grid">
+        <div class="kvk2_about-text">
+            <p>A <strong>Cão Carinho Pet Shop</strong> nasceu em 2015 em Rio Verde, Goiás, com o propósito de oferecer atendimento acolhedor e produtos de qualidade para animais de estimação. Ao longo dos anos, construímos a confiança de tutores que buscam o melhor para seus cães, gatos e demais companheiros.</p>
+            <p>Trabalhamos com as melhores marcas de rações, acessórios, produtos de higiene e medicamentos veterinários. Nosso serviço de banho e tosa é realizado por profissionais experientes, sempre priorizando o bem-estar e o conforto do animal.</p>
+            <p>Estamos localizados no Bairro Popular, com fácil acesso e estacionamento. Todo o nosso atendimento é presencial e personalizado, porque acreditamos que cada pet merece atenção individual.</p>
+        </div>
+        <div class="kvk2_about-highlights">
+            <div class="kvk2_highlight-card">
+                <div class="kvk2_number">10+</div>
+                <div class="kvk2_label">Anos de atuação</div>
+            </div>
+            <div class="kvk2_highlight-card">
+                <div class="kvk2_number">🐶</div>
+                <div class="kvk2_label">Banho e Tosa</div>
+            </div>
+            <div class="kvk2_highlight-card">
+                <div class="kvk2_number">🛒</div>
+                <div class="kvk2_label">Produtos e Rações</div>
+            </div>
+            <div class="kvk2_highlight-card">
+                <div class="kvk2_number">💊</div>
+                <div class="kvk2_label">Medicamentos Veterinários</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<div class="kvk2_section-alt">
+    <section class="kvk2_section" id="servicos">
+        <h2 class="kvk2_section-title">Nossos Serviços</h2>
+        <p class="kvk2_section-sub">Tudo o que seu pet precisa em um só lugar.</p>
+        <div class="kvk2_services-grid">
+            <div class="kvk2_service-card">
+                <div class="kvk2_service-icon">🛁</div>
+                <h3>Banho e Tosa</h3>
+                <p>Higiene e embelezamento com produtos adequados para cada tipo de pelagem. Ambiente limpo e profissionais capacitados para cuidar do seu pet com carinho.</p>
+            </div>
+            <div class="kvk2_service-card">
+                <div class="kvk2_service-icon">🦴</div>
+                <h3>Rações e Alimentos</h3>
+                <p>Rações premium e super premium das melhores marcas do mercado, para cães, gatos e outros animais de estimação. Orientação sobre a alimentação ideal.</p>
+            </div>
+            <div class="kvk2_service-card">
+                <div class="kvk2_service-icon">💊</div>
+                <h3>Medicamentos Veterinários</h3>
+                <p>Antipulgas, vermífugos, suplementos e medicamentos veterinários das principais marcas. Tudo com a orientação adequada para o uso correto.</p>
+            </div>
+            <div class="kvk2_service-card">
+                <div class="kvk2_service-icon">🧸</div>
+                <h3>Acessórios e Brinquedos</h3>
+                <p>Coleiras, camas, casinhas, brinquedos, roupas, comedouros, bebedouros e tudo para o conforto e diversão do seu companheiro.</p>
+            </div>
+            <div class="kvk2_service-card">
+                <div class="kvk2_service-icon">🐾</div>
+                <h3>Animais de Estimação</h3>
+                <p>Comercialização de animais vivos para criação doméstica, com procedência e documentação adequada. Orientação sobre os cuidados iniciais.</p>
+            </div>
+            <div class="kvk2_service-card">
+                <div class="kvk2_service-icon">🚗</div>
+                <h3>Atendimento Presencial</h3>
+                <p>Atendimento presencial personalizado na nossa loja em Rio Verde. Nosso time está pronto para ajudar você a encontrar o que seu pet precisa.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- DEPOIMENTOS -->
+<section class="kvk2_section" id="depoimentos">
+    <h2 class="kvk2_section-title">O que dizem nossos clientes</h2>
+    <p class="kvk2_section-sub">A satisfação dos tutores é o nosso maior reconhecimento.</p>
+    <div class="kvk2_testimonials-grid">
+        <div class="kvk2_testimonial-card">
+            <div class="kvk2_testimonial-stars">★★★★★</div>
+            <p>"Levo minha cachorrinha há anos e sempre saio satisfeita. O atendimento é muito cuidadoso e o banho fica impecável. Recomendo para todos os tutores de Rio Verde."</p>
+            <div class="kvk2_testimonial-author">— Fernanda R.</div>
+        </div>
+        <div class="kvk2_testimonial-card">
+            <div class="kvk2_testimonial-stars">★★★★★</div>
+            <p>"Encontro tudo que preciso: ração, remédios, brinquedos. A equipe sempre me ajuda a escolher o melhor produto para o meu gato. Preços justos e bom atendimento."</p>
+            <div class="kvk2_testimonial-author">— Carlos M.</div>
+        </div>
+        <div class="kvk2_testimonial-card">
+            <div class="kvk2_testimonial-stars">★★★★★</div>
+            <p>"Meu cachorro é bem agitado e eles sempre têm paciência. Fico tranquila sabendo que ele está em boas mãos. A tosa fica perfeita toda vez."</p>
+            <div class="kvk2_testimonial-author">— Patrícia S.</div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTATO -->
+<div class="kvk2_section-alt">
+    <section class="kvk2_section" id="contato">
+        <h2 class="kvk2_section-title">Entre em Contato</h2>
+        <p class="kvk2_section-sub">Estamos prontos para atender você e seu pet.</p>
+        <div class="kvk2_contact-grid">
+            <div>
+                <div class="kvk2_contact-info-item">
+                    <div class="kvk2_contact-icon">📍</div>
+                    <div>
+                        <div class="kvk2_label">Endereço</div>
+                        <div class="kvk2_value">Rua 19, 695, Quadra 68, Lote 08<br>Bairro Popular — Rio Verde, GO<br>CEP 75.903-505</div>
+                    </div>
+                </div>
+                <div class="kvk2_contact-info-item">
+                    <div class="kvk2_contact-icon">📞</div>
+                    <div>
+                        <div class="kvk2_label">Telefone</div>
+                        <div class="kvk2_value">(64) 3051-3998 / (64) 3602-3215</div>
+                    </div>
+                </div>
+                <div class="kvk2_contact-info-item">
+                    <div class="kvk2_contact-icon">✉️</div>
+                    <div>
+                        <div class="kvk2_label">E-mail</div>
+                        <div class="kvk2_value">gong93201108@gmail.com</div>
+                    </div>
+                </div>
+                <div class="kvk2_contact-info-item">
+                    <div class="kvk2_contact-icon">🌐</div>
+                    <div>
+                        <div class="kvk2_label">Site</div>
+                        <div class="kvk2_value">elevateman.online</div>
+                    </div>
+                </div>
+            </div>
+            <div class="kvk2_contact-form">
+                <input type="text" placeholder="Seu nome" aria-label="Seu nome">
+                <input type="email" placeholder="Seu e-mail" aria-label="Seu e-mail">
+                <input type="tel" placeholder="Seu telefone" aria-label="Seu telefone">
+                <textarea placeholder="Como podemos ajudar?" aria-label="Mensagem"></textarea>
+                <button type="button" class="kvk2_btn-submit">Enviar Mensagem</button>
+            </div>
+        </div>
+
+        <div class="kvk2_hours-bar">
+            <span>🕐 <strong>Horário de Funcionamento:</strong></span>
+            <span>Segunda a Sexta: 08h às 18h30</span>
+            <span>Sábado: 08h às 18h30</span>
+            <span>Domingo: Fechado</span>
+        </div>
+    </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="kvk2_footer">
+    <div class="kvk2_footer-inner">
+        <div class="kvk2_footer-top">
+            <div>
+                <div class="kvk2_footer-brand">🐾 Cão Carinho Pet Shop</div>
+                <p class="kvk2_footer-desc">Pet shop completo em Rio Verde, GO. Há mais de 10 anos oferecendo produtos, serviços de higiene e embelezamento e tudo para o bem-estar do seu animal de estimação.</p>
+            </div>
+            <div>
+                <h4>Navegação</h4>
+                <ul class="kvk2_footer-links">
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <ul class="kvk2_footer-links">
+                    <li><a href="#politica-privacidade">Política de Privacidade</a></li>
+                    <li><a href="#termos-de-uso">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="kvk2_footer-legal">
+            <strong>Cão Carinho Pet Shop LTDA</strong> — CNPJ: 22.011.148/0001-64<br>
+            Rua 19, 695, Quadra 68, Lote 08 — Bairro Popular, Rio Verde - GO, CEP 75.903-505<br>
+            Telefone: (64) 3051-3998 / (64) 3602-3215 — E-mail: gong93201108@gmail.com<br>
+            © 2025 Cão Carinho Pet Shop — Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+<!-- MODAL: POLÍTICA DE PRIVACIDADE -->
+<div class="kvk2_modal-overlay" id="politica-privacidade">
+    <div class="kvk2_modal-box">
+        <h2>Política de Privacidade</h2>
+        <p><strong>Última atualização:</strong> Junho de 2025</p>
+        <p>A <strong>Cão Carinho Pet Shop LTDA</strong>, inscrita no CNPJ sob o nº 22.011.148/0001-64, com sede na Rua 19, 695, Quadra 68, Lote 08, Bairro Popular, Rio Verde - GO, CEP 75.903-505, é responsável pelo tratamento dos dados pessoais coletados neste site, em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD).</p>
+
+        <p><strong>1. Dados coletados</strong></p>
+        <p>Podemos coletar as seguintes informações quando você utiliza nosso formulário de contato ou interage conosco: nome, e-mail, telefone e conteúdo da mensagem enviada.</p>
+
+        <p><strong>2. Finalidade do tratamento</strong></p>
+        <p>Os dados coletados são utilizados exclusivamente para responder suas solicitações, fornecer informações sobre nossos produtos e serviços e melhorar a experiência de atendimento ao cliente.</p>
+
+        <p><strong>3. Compartilhamento de dados</strong></p>
+        <p>Não compartilhamos, vendemos ou cedemos seus dados pessoais a terceiros, exceto quando exigido por lei ou autoridade competente.</p>
+
+        <p><strong>4. Armazenamento e segurança</strong></p>
+        <p>Seus dados são armazenados em ambiente seguro, com controles de acesso restritos aos colaboradores autorizados. Adotamos medidas técnicas e organizacionais adequadas para proteger seus dados contra acesso não autorizado, perda ou alteração.</p>
+
+        <p><strong>5. Seus direitos</strong></p>
+        <p>Conforme a LGPD, você tem direito a: acessar seus dados, corrigir dados incompletos ou desatualizados, solicitar a exclusão de seus dados pessoais e revogar o consentimento dado para o tratamento. Para exercer qualquer desses direitos, entre em contato pelo e-mail gong93201108@gmail.com.</p>
+
+        <p><strong>6. Cookies</strong></p>
+        <p>Este site pode utilizar cookies para melhorar a experiência de navegação. Você pode desativar os cookies nas configurações do seu navegador.</p>
+
+        <p><strong>Contato do responsável:</strong><br>
+        Cão Carinho Pet Shop LTDA<br>
+        E-mail: gong93201108@gmail.com<br>
+        Telefone: (64) 3051-3998</p>
+
+        <a href="#" class="kvk2_modal-close">← Fechar</a>
+    </div>
+</div>
+
+<!-- MODAL: TERMOS DE USO -->
+<div class="kvk2_modal-overlay" id="termos-de-uso">
+    <div class="kvk2_modal-box">
+        <h2>Termos de Uso</h2>
+        <p><strong>Última atualização:</strong> Junho de 2025</p>
+        <p>Ao acessar e utilizar o site elevateman.online, você concorda com os termos e condições descritos abaixo. Este site é mantido pela <strong>Cão Carinho Pet Shop LTDA</strong>, inscrita no CNPJ 22.011.148/0001-64, com sede na Rua 19, 695, Quadra 68, Lote 08, Bairro Popular, Rio Verde - GO, CEP 75.903-505.</p>
+
+        <p><strong>1. Objetivo do site</strong></p>
+        <p>Este site tem caráter exclusivamente informativo e institucional, destinado a apresentar os produtos e serviços oferecidos pela Cão Carinho Pet Shop em sua loja física em Rio Verde, GO.</p>
+
+        <p><strong>2. Uso permitido</strong></p>
+        <p>O conteúdo deste site é destinado a uso pessoal e não comercial. É proibido reproduzir, copiar, distribuir ou utilizar qualquer conteúdo sem autorização prévia.</p>
+
+        <p><strong>3. Limitação de responsabilidade</strong></p>
+        <p>As informações contidas neste site, incluindo preços e disponibilidade de produtos, podem sofrer alterações sem aviso prévio. Para informações atualizadas, consulte diretamente nossa loja ou nossos canais de atendimento.</p>
+
+        <p><strong>4. Propriedade intelectual</strong></p>
+        <p>Todo o conteúdo deste site, incluindo textos, logotipos e elementos visuais, é de propriedade da Cão Carinho Pet Shop LTDA e está protegido pelas leis brasileiras de propriedade intelectual.</p>
+
+        <p><strong>5. Legislação aplicável</strong></p>
+        <p>Estes termos são regidos pela legislação brasileira. Qualquer disputa será submetida ao foro da comarca de Rio Verde, GO.</p>
+
+        <p><strong>Contato:</strong><br>
+        Cão Carinho Pet Shop LTDA<br>
+        E-mail: gong93201108@gmail.com<br>
+        Telefone: (64) 3051-3998</p>
+
+        <a href="#" class="kvk2_modal-close">← Fechar</a>
+    </div>
+</div>
+
+<script>
+    // Fecha o menu mobile ao clicar num link
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.remove('open');
+        });
+    });
+</script>
+
+<footer style="text-align:center;padding:20px 10px;font-size:11px;color:#999;margin-top:40px;border-top:1px solid #eee"><p>© 2025 Elevateman. Todos os direitos reservados. Este conteúdo é protegido por direitos autorais. | <a href="https://elevateman.online/" style="color:#999;text-decoration:none">elevateman.online</a></p></footer>
+</body>
+</html>
+
+<!-- bd1dfbecba642ddf7f92db98 -->
